@@ -1,0 +1,27 @@
+[
+    {
+        "type": "phone",
+        "value": "(616) 844-4400",
+        "display": "Phone: %s"
+    },
+    {
+        "type": "phone",
+        "value": "(616) 844-6694",
+        "display": "Fax: %s"
+    },
+    {
+        "type": "link",
+        "value": "Facebook",
+        "href": "https://www.facebook.com/pages/Grand-Haven-Family-Dentistry/539947432849472",
+        "display": "Visit us on %s"
+    },
+    {
+        "type": "address",
+        "line1": "919 S. Beechtree",
+        "line2": "Suite #7",
+        "city": "Grand Haven",
+        "state": "MI",
+        "zip": "49417",
+        "mapSrc": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2915.4968140608617!2d-86.20862218452169!3d43.052017579146494!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88198122dace4a41%3A0x52e4edf0500500a2!2s919%20S%20Beechtree%20St%20STE%207%2C%20Grand%20Haven%2C%20MI%2049417!5e0!3m2!1sen!2sus!4v1590421173410!5m2!1sen!2sus"
+    }
+]

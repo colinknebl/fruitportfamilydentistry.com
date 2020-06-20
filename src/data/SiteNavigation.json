@@ -1,0 +1,32 @@
+[
+    {
+        "name": "Home",
+        "to": "/",
+        "enabled": true
+    },
+    {
+        "name": "Services",
+        "to": "/services",
+        "enabled": true
+    },
+    {
+        "name": "New Patients",
+        "to": "/new-patients",
+        "enabled": true
+    },
+    {
+        "name": "Staff",
+        "to": "/staff",
+        "enabled": true
+    },
+    {
+        "name": "Office Tour",
+        "to": "/office-tour",
+        "enabled": true
+    },
+    {
+        "name": "Education",
+        "to": "/education",
+        "enabled": true
+    }
+]
