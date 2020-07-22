@@ -4,8 +4,8 @@ require('dotenv').config({
 
 module.exports = {
     siteMetadata: {
-        title: `Grand Haven Family Dentistry`,
-        description: `Grand Haven's permier Family Dentistry Practice`,
+        title: `Fruitport Family Dentistry`,
+        description: `Fruitport's permier Family Dentistry Practice`,
         author: `Colin Knebl`,
     },
     plugins: [
@@ -42,7 +42,7 @@ module.exports = {
         {
             resolve: 'gatsby-source-sanity',
             options: {
-                projectId: '4le0odfg',
+                projectId: 'd0vm2bq2',
                 dataset: 'production',
                 watchMode: true,
 
