@@ -14,7 +14,7 @@
 
     --default-color: var(--accent-color-blue-1);
     --on-default-color: var(--accent-color-blue-6);
-    --primary-color: var(--accent-color-navy-4);
+    --primary-color: rgba(10, 90, 142, 1); /* var(--accent-color-navy-4); */
     --on-primary-color: var(--base-color-1);
     --secondary-color: var(--accent-color-yellow-1);
     --on-secondary-color: var(--base-color-2);
