@@ -10,23 +10,33 @@ interface ILetterheadProps {
     date?: string;
 }
 
-interface IImageQueryResults {
+interface IQueryResults {
     placeholderImage: {
         childImageSharp: {
             fluid: FluidObject;
+        };
+    };
+    site: {
+        siteMetadata: {
+            title: string;
         };
     };
 }
 
 export function Letterhead({ date }: ILetterheadProps) {
     const { doctors } = getDoctors();
-    const image = useStaticQuery<IImageQueryResults>(graphql`
+    const query = useStaticQuery<IQueryResults>(graphql`
         query {
             placeholderImage: file(relativePath: { eq: "letterhead.png" }) {
                 childImageSharp {
                     fluid(maxWidth: 60) {
                         ...GatsbyImageSharpFluid
                     }
+                }
+            }
+            site {
+                siteMetadata {
+                    title
                 }
             }
         }
@@ -42,10 +52,10 @@ export function Letterhead({ date }: ILetterheadProps) {
                             height: '51px',
                         }}
                         alt="logo"
-                        fluid={image.placeholderImage.childImageSharp.fluid}
+                        fluid={query.placeholderImage.childImageSharp.fluid}
                     />
                     <span className="practice-name">
-                        Grand Haven Family Dentistry
+                        {query.site.siteMetadata.title}
                     </span>
                     {doctors.map((doctor) => (
                         <span key={doctor.id} className="doc-name">
