@@ -168,7 +168,7 @@ function ContactAddress({ address }: { address: Address }) {
     return (
         <div>
             {address.line1} <br />
-            {address.line2} <br />
+            {address.line2} {address.line2 && <br />}
             {address.city}, {address.state} {address.zip}
             <iframe
                 className="map"
