@@ -1,10 +1,10 @@
 {
   "root": true,
   "project": {
-    "name": "ghfamilydentistry.com"
+    "name": "fruitportfamilydentistry.com"
   },
   "api": {
-    "projectId": "4le0odfg",
+    "projectId": "d0vm2bq2",
     "dataset": "production"
   },
   "plugins": [
