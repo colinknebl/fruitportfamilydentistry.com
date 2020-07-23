@@ -12,7 +12,7 @@ export function Staff() {
     return (
         <StyledStaffGrid>
             {staffGroups.map((group) => (
-                <StaffGroupView group={group} />
+                <StaffGroupView key={group.title} group={group} />
             ))}
         </StyledStaffGrid>
     );
