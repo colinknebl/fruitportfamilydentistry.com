@@ -1,10 +1,9 @@
 import React from 'react';
+import { graphql, PageProps } from 'gatsby';
 
-const SANITY_STUDIO_URI = 'https://ghfamilydentistry.sanity.studio/desk';
-
-function Admin() {
+function Admin(props: PageProps<IPageQueryResults>) {
     React.useEffect(() => {
-        window.location.assign(SANITY_STUDIO_URI);
+        window.location.assign(props.data.site.siteMetadata.sanityStudioURL);
     }, []);
 
     return (
@@ -12,10 +11,31 @@ function Admin() {
             <p>Redirecting...</p>
             <p>
                 If you are not redirected,{' '}
-                <a href={SANITY_STUDIO_URI}>click here</a>.
+                <a href={props.data.site.siteMetadata.sanityStudioURL}>
+                    click here
+                </a>
+                .
             </p>
         </div>
     );
 }
 
 export default Admin;
+
+interface IPageQueryResults {
+    site: {
+        siteMetadata: {
+            sanityStudioURL: string;
+        };
+    };
+}
+
+export const query = graphql`
+    query {
+        site {
+            siteMetadata {
+                sanityStudioURL
+            }
+        }
+    }
+`;

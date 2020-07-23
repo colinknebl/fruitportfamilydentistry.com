@@ -7,6 +7,7 @@ module.exports = {
         title: `Fruitport Family Dentistry`,
         description: `Fruitport's permier Family Dentistry Practice`,
         author: `Colin Knebl`,
+        sanityStudioURL: 'https://fruitportfamilydentistry.sanity.studio/',
     },
     plugins: [
         `gatsby-plugin-styled-components`,
