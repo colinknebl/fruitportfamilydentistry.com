@@ -32,7 +32,7 @@ export const StyledDoctorList = styled.ul<Pick<IDoctorsProps, 'column'>>`
 
     display: grid;
     grid-template-columns: ${(p) =>
-        p.column ? '1fr' : 'repeat(auto-fill, minmax(320px, 1fr))'};
+        p.column ? '1fr' : 'repeat(auto-fit, minmax(320px, 1fr))'};
     grid-gap: 50px;
     gap: 50px;
 `;
