@@ -41,9 +41,7 @@ interface IPageQueryResults {
 
 export const query = graphql`
     query {
-        placeholderImage: file(
-            relativePath: { eq: "office/treatment-room-4.jpg" }
-        ) {
+        placeholderImage: file(relativePath: { eq: "staff/staff-cover.jpg" }) {
             childImageSharp {
                 fluid(maxWidth: 800) {
                     ...GatsbyImageSharpFluid
