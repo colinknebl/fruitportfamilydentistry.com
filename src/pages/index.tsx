@@ -6,7 +6,7 @@ import React from 'react';
 import Page from '../components/page';
 import SEO from '../components/seo';
 import { JumbotronSection } from '../components/jumbotron-section';
-import { Letter } from '../components/_temp/letter';
+import { Letter } from '../components/client/letter';
 import { Section } from '../components/section';
 import { Doctors, IDoctorViewProps } from '../components/doctors';
 
