@@ -5,7 +5,7 @@ require('dotenv').config({
 module.exports = {
     siteMetadata: {
         title: `Fruitport Family Dentistry`,
-        description: `Fruitport's permier Family Dentistry Practice`,
+        description: `Fruitport's Premier Family Dentistry Practice`,
         author: `Colin Knebl`,
         sanityStudioURL: 'https://fruitportfamilydentistry.sanity.studio/',
     },
