@@ -24,5 +24,5 @@ export function ContentView({ content }: IContentProps) {
 }
 
 const StyledArticle = styled.article`
-    white-space: pre-line;
+    white-space: break-spaces;
 `;

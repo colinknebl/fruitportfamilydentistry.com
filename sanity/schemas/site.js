@@ -9,6 +9,11 @@ export default {
             type: 'reference',
             to: [{ type: 'modal' }],
         },
+        {
+            name: 'homeLetter',
+            title: 'Home Letter',
+            type: 'blog',
+        },
     ],
     preview: {
         section: {
