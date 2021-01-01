@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import type { RawBlock } from '../../models/content/Content';
+import type { RawBlock } from '../../models/SanityBlockContent';
 import { Doctor } from '../../models/Doctor';
 
 type RawDoctor = {

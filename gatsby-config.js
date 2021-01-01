@@ -16,14 +16,14 @@ module.exports = {
             resolve: `gatsby-source-filesystem`,
             options: {
                 name: `images`,
-                path: `${__dirname}/src/images`,
+                path: `${__dirname}/src/client/images`,
             },
         },
         `gatsby-transformer-json`,
         {
             resolve: `gatsby-source-filesystem`,
             options: {
-                path: `${__dirname}/src/data`,
+                path: `${__dirname}/src/client/data`,
             },
         },
         `gatsby-transformer-sharp`,
@@ -37,7 +37,7 @@ module.exports = {
                 background_color: `#663399`,
                 theme_color: `#663399`,
                 display: `minimal-ui`,
-                icon: `src/images/favicon.ico`, // This path is relative to the root of the site.
+                icon: `src/client/images/favicon.ico`, // This path is relative to the root of the site.
             },
         },
         {

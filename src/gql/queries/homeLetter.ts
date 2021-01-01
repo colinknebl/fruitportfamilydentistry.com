@@ -1,43 +1,20 @@
 import { useStaticQuery, graphql } from "gatsby"
-import { Content, RawBlock } from "../../models/content/Content"
-import { LetterDate } from "../../models/LetterDate"
-
-interface _HomeLetter {
-    publishDate: string
-    text: RawBlock[]
-}
+import { HomeLetter } from '../../models/HomeLetter';
 
 type LinkQueryResult = {
     sanitySite: {
-        _rawHomeLetter: _HomeLetter
+        _rawHomeLetter: HomeLetter.Raw
     }
 }
 
 export const getLetter = (): HomeLetter => {
-    const {
-        sanitySite: { _rawHomeLetter },
-    } = useStaticQuery<LinkQueryResult>(graphql`
+    const { sanitySite } = useStaticQuery<LinkQueryResult>(graphql`
         {
             sanitySite {
                 _rawHomeLetter
             }
         }
-    `)
+    `);
 
-    return new HomeLetter(_rawHomeLetter)
-}
-
-class HomeLetter {
-    private _raw: _HomeLetter
-    content: Content
-    private _publishDate: LetterDate
-    constructor(rawLetter: _HomeLetter) {
-        this._raw = rawLetter
-        this.content = new Content(rawLetter.text)
-        this._publishDate = new LetterDate(rawLetter.publishDate)
-    }
-
-    get publishDate(): string {
-        return this._publishDate.formattedDate
-    }
+    return new HomeLetter(sanitySite?._rawHomeLetter);
 }

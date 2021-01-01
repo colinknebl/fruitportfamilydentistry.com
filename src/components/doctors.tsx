@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
+import BlockContent from '@sanity/block-content-to-react';
 
-import { ContentView } from './content-view';
 import { getDoctors } from '../gql/queries/doctors';
 import type { Doctor } from '../models/Doctor';
 
@@ -54,7 +54,7 @@ function DoctorView({ doctor }: IDoctorViewProps) {
             />
             <h3>{doctor.name}</h3>
             <hr />
-            <ContentView content={doctor.content} />
+            <BlockContent blocks={doctor.blocks} />
         </StyledDoctorView>
     );
 }

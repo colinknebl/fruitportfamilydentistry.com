@@ -1,19 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
-
-import type { Content } from '../models/content/Content';
-import { ContentView } from './content-view';
-import { Letterhead } from './client/Letterhead';
+import BlockContent from '@sanity/block-content-to-react';
+import { SanityBlockContent } from '../models/SanityBlockContent';
+import { Letterhead } from "../client/components/Letterhead";
 
 interface ILetterProps {
-    letterContent: Content;
+    content: SanityBlockContent;
+    withLetterhead?: boolean;
 }
 
-export function Letter({ letterContent }: ILetterProps) {
+export function Letter({ content, withLetterhead }: ILetterProps) {
+    if (!content.active) {
+        return null
+    }
+
     return (
         <StyledPaper>
-            {/* <Letterhead /> */}
-            <ContentView content={letterContent} />
+            {withLetterhead && <Letterhead date={content.date} />}
+            <BlockContent blocks={content.blocks} />
         </StyledPaper>
     );
 }
@@ -28,6 +32,7 @@ export const StyledPaper = styled.div`
     max-width: 8in;
     color: #333;
     line-height: 1.2;
+    white-space: break-spaces;
 
     box-shadow: 0 1px 1px rgba(0, 0, 0, 0.12), 0 2px 2px rgba(0, 0, 0, 0.12),
         0 4px 4px rgba(0, 0, 0, 0.12), 0 8px 8px rgba(0, 0, 0, 0.12),

@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from 'gatsby';
-import { RawBlock } from '../../models/content/Content';
+import { RawBlock } from '../../models/SanityBlockContent';
 import { Modal } from '../../models/Modal';
 
 interface _Modal {
@@ -24,9 +24,7 @@ export interface QueriedModal extends _Modal {
 }
 
 export const getModal = (): Modal => {
-    const {
-        sanitySite: { activeModal },
-    } = useStaticQuery<LinkQueryResult>(graphql`
+    const { sanitySite } = useStaticQuery<LinkQueryResult>(graphql`
         {
             sanitySite {
                 activeModal {
@@ -44,5 +42,5 @@ export const getModal = (): Modal => {
         }
     `);
 
-    return new Modal(activeModal);
+    return new Modal(sanitySite?.activeModal);
 };

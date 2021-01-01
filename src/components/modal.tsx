@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
+import BlockContent from '@sanity/block-content-to-react';
+
 
 import type { Modal } from '../models/Modal';
 import { ModalContext } from '../hooks/useModal';
-import { ContentView } from './content-view';
 
 interface IModalProps {
     modal: Modal;
@@ -17,7 +18,7 @@ export function ModalView({ modal, open }: IModalProps) {
             <div className="modal-container">
                 <button onClick={() => setIsModalOpen(false)}>&#x2715;</button>
                 {modal.imageUrl && <img src={modal.imageUrl} />}
-                <ContentView content={modal.content} />
+                <BlockContent blocks={modal.blocks} />
             </div>
         </StyledModal>
     );

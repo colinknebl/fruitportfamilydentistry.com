@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import BlockContent from '@sanity/block-content-to-react';
 
 import { getStaff } from '../gql/queries/staff';
 import { StaffGroup } from '../models/StaffGroup';
-import { ContentView } from './content-view';
 import { StyledDoctorList } from './doctors';
 
 export function Staff() {
@@ -44,7 +44,7 @@ function StaffGroupView({ group }: IStaffGroupProps) {
                     {group.title} - {group.commaSeparatedEmployeeNames}
                 </h3>
                 <hr />
-                <ContentView content={group.content} />
+                <BlockContent blocks={group.blocks} />
             </div>
         </StyledStaffGroup>
     );

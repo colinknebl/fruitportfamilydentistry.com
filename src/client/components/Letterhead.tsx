@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { FluidObject } from 'gatsby-image';
 
 import { getDoctors } from '../../gql/queries/doctors';
-import { Image } from '../image';
+import { Image } from '../../components/image';
 
 interface ILetterheadProps {
     date?: string;

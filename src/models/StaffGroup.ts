@@ -1,14 +1,13 @@
-import { Content, RawBlock } from './content/Content';
+import { SanityBlockContent, RawBlock } from './SanityBlockContent';
 
-export class StaffGroup {
-    public content: Content;
+export class StaffGroup extends SanityBlockContent {
     constructor(
         public title: string,
         public employees: string[],
         public imageUrl: string,
         content: RawBlock[]
     ) {
-        this.content = new Content(content);
+        super(content);
     }
 
     get commaSeparatedEmployeeNames(): string {

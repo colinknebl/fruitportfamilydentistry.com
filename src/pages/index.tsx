@@ -3,14 +3,17 @@ import { FluidObject } from 'gatsby-image';
 import styled from 'styled-components';
 import React from 'react';
 
+import { getLetter } from "../gql/queries/homeLetter";
 import Page from '../components/page';
 import SEO from '../components/seo';
 import { JumbotronSection } from '../components/jumbotron-section';
-import { Letter } from '../components/client/letter';
+import { Letter } from '../components/letter';
 import { Section } from '../components/section';
 import { Doctors, IDoctorViewProps } from '../components/doctors';
 
 const IndexPage = (props: PageProps<IPageQueryResults>) => {
+    const letter = getLetter();
+
     return (
         <Page>
             <SEO title="Home" />
@@ -23,7 +26,7 @@ const IndexPage = (props: PageProps<IPageQueryResults>) => {
                 </StyledDocNames>
             </JumbotronSection>
             <Section>
-                <Letter />
+                {letter.active && <Letter content={letter} withLetterhead={true} />}
             </Section>
         </Page>
     );

@@ -1,18 +1,18 @@
 import { graphql, PageProps } from 'gatsby';
 import { FluidObject } from 'gatsby-image';
 import React from 'react';
+import BlockContent from '@sanity/block-content-to-react';
 
-import { Content, RawBlock } from '../models/content/Content';
 import Page from '../components/page';
 import SEO from '../components/seo';
 import { JumbotronSection } from '../components/jumbotron-section';
 import { Section } from '../components/section';
-import { ContentView } from '../components/content-view';
+import { SanityBlockContent, RawBlock } from '../models/SanityBlockContent';
 
 const TITLE = 'Education';
 
 const EducationPage = (props: PageProps<IPageQueryResults>) => {
-    const content = new Content(props.data.sanityEducationPage._rawDisclaimer);
+    const disclaimer = new SanityBlockContent(props.data.sanityEducationPage._rawDisclaimer);
     return (
         <Page>
             <SEO title={TITLE} />
@@ -28,7 +28,7 @@ const EducationPage = (props: PageProps<IPageQueryResults>) => {
                 </ul>
             </Section>
             <Section title="Disclaimer">
-                <ContentView content={content} />
+                <BlockContent blocks={disclaimer.blocks} />
             </Section>
         </Page>
     );

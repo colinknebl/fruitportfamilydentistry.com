@@ -1,28 +1,18 @@
-import { Content } from './content/Content';
+import { SanityBlockContent } from './SanityBlockContent';
 import { QueriedModal } from '../gql/queries/modal';
 
-export class Modal {
-    #content: Content = null;
-    #isActive: boolean = false;
+export class Modal extends SanityBlockContent {
     public id: string;
     public imageUrl: string | undefined;
     public title: string;
 
     constructor(queriedModal: QueriedModal) {
+        super(queriedModal?._rawContent);
+
         if (queriedModal) {
-            this.#isActive = true;
-            this.#content = new Content(queriedModal._rawContent);
             this.id = queriedModal.id;
             this.imageUrl = queriedModal.image?.asset?.url;
             this.title = queriedModal.title;
         }
-    }
-
-    public get content(): Content {
-        return this.#content;
-    }
-
-    public get isActive(): boolean {
-        return this.#isActive;
     }
 }

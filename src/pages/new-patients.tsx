@@ -2,17 +2,17 @@ import { graphql, PageProps } from 'gatsby';
 import { FluidObject } from 'gatsby-image';
 import React from 'react';
 
-import { Content, RawBlock } from '../models/content/Content';
 import Page from '../components/page';
 import SEO from '../components/seo';
 import { JumbotronSection } from '../components/jumbotron-section';
 import { Section } from '../components/section';
 import { Letter } from '../components/letter';
+import { RawBlock, SanityBlockContent } from '../models/SanityBlockContent';
 
 const TITLE = 'New Patients';
 
-const NewPatientsPage = (props: PageProps<IPageQueryResults>) => {
-    const content = new Content(props.data.sanityNewPatientsPage._rawLetter);
+const NewPatientsPage = (props: PageProps<IPageQueryResults>): JSX.Element => {
+    const content = new SanityBlockContent(props.data.sanityNewPatientsPage._rawLetter);
 
     return (
         <Page>
@@ -22,7 +22,7 @@ const NewPatientsPage = (props: PageProps<IPageQueryResults>) => {
                 title={TITLE}
             />
             <Section>
-                <Letter letterContent={content} />
+                {content.active && <Letter content={content} />}
             </Section>
             <Section title="Forms">
                 <Forms forms={props.data.sanityNewPatientsPage.forms} />
